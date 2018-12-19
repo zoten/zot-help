@@ -10,7 +10,6 @@ git stash show -p --color=never > my-patch-name.patch
 git apply --stat my-patch-name.patch
 
 # Verify no errors:
-
 git apply --check my-patch-name.patch
 
 ```

@@ -20,3 +20,11 @@ kill $(ps aux | grep '[p]ython manage.py' | awk '{print $2}')
 
 du -ma | sort -nr | head -n 20
 ```
+
+## Check JSON files
+
+### Valid JSON (without jq)
+
+``` bash
+cat <path/to/file> |  python -c "import sys, json; print json.load(sys.stdin)
+```

@@ -1,4 +1,4 @@
-# CenOS / Debian Cheatsheet
+# CentOS / Debian Cheatsheet
 
 Thanks to [Papito Favaro](https://github.com/pfav)
 

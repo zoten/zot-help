@@ -1,5 +1,6 @@
 # Systemd basic usage
 
+```
 sudo systemctl start application.service
 sudo systemctl stop application.service
 sudo systemctl restart application.service
@@ -14,3 +15,4 @@ systemctl is-enabled application.service
 systemctl is-failed application.service
 
 systemctl list-units application.service
+```

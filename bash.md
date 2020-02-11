@@ -43,3 +43,16 @@ sudo grep sudo /var/log/auth.log
 sudo grep sudo /var/log/secure
 
 ```
+
+## Inotify watches
+
+``` bash
+# Thanks to https://unix.stackexchange.com/questions/13751/kernel-inotify-watch-limit-reached
+
+# first column will be the number of inotify fds (not the number of watches though)
+find /proc/*/fd -lname anon_inode:inotify |
+   cut -d/ -f3 |
+   xargs -I '{}' -- ps --no-headers -o '%p %U %c' -p '{}' |
+   uniq -c |
+   sort -nr
+```

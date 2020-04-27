@@ -27,3 +27,10 @@ e.g. if log is something like
 pid = :c.pid(0, 1202, 17)
 :sys.get_state(pid)
 ```
+
+Also, other useful insights
+
+```
+:sys.get_status(pid)
+Process.info(pid)
+```

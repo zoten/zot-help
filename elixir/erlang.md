@@ -17,6 +17,7 @@ You can do super useful  partial pattern matching
 ``` erlang
 <<A:48,_:12,C:68>> = Var.
 ```
+Just remember that `:x` is expressed in bits, but numbers are u8
 
 ### Print int
 

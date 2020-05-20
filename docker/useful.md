@@ -1,5 +1,14 @@
 # Useful images
 
+## Debug a failing container
+
+If container fails to start, you can tail docker logs with
+
+```
+docker events&
+docker logs <copy the instance id from docker events messages on screen>
+```
+
 ## Connect in shell
 
 ```

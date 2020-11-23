@@ -33,4 +33,6 @@ Also, other useful insights
 ```
 :sys.get_status(pid)
 Process.info(pid)
+# Current stacktrace only
+Process.info(pid, :current_stacktrace)
 ```

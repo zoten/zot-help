@@ -21,6 +21,7 @@ alias :mnesia, as: Mnesia
 Erlang
 
 ``` erlang
+% Thanks to https://lookonmyworks.co.uk/2013/07/08/selecting-all-records-from-an-mnesia-table/
 F = fun() -> mnesia:select(Tab,[{'_',[],['$_']}]) end,
 mnesia:activity(transaction, F).
 ```

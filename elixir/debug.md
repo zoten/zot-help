@@ -12,3 +12,9 @@ IEx.pry
 ```
 
 Note that you *must* be running in a iex session (e.g. `iex -S mix phx.server`)
+
+## Print stacktrace
+
+```
+IO.inspect(Process.info(self(), :current_stacktrace), label: "STACKTRACE")
+```

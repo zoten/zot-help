@@ -56,3 +56,10 @@ find /proc/*/fd -lname anon_inode:inotify |
    uniq -c |
    sort -nr
 ```
+
+## SSH tunnel
+
+``` bash
+# Forwards local 127.0.0.1:8080 to remote 127.0.0.1:8082 on machine 10.10.0.1
+ssh -L 127.0.0.1:8080:127.0.0.1:8082 root@10.10.0.1
+```

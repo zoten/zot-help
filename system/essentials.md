@@ -21,7 +21,7 @@ sudo pacman -Syy mlocate base-devel bash-completion \
   gcc clang automake autoconf ncurses \
   jdk-openjdk \
   \ # building erlang
-  lksctp-tools xsltproc
+  lksctp-tools xsltproc wxgtk-common-dev
 ```
 
 ## Manual installs

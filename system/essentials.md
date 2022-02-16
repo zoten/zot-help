@@ -2,18 +2,27 @@
 
 Packages that I search for in any development distribution
 
-# Debian based
+## Debian based
 
 ``` bash
-sudo apt-get install mlocate build-essentials \
+sudo apt-get install mlocate build-essential bash-completion \
+  # general dev
+  gcc clang automake autoconf ncurses \
+  jdk-openjdk \
   \ # building erlang
-  libsctp-dev
+  libsctp-dev xsltproc
 ```
 
-# Arch based
+## Arch based
 
 ``` bash
-sudo pacman -Syy mlocate base-devel \
+sudo pacman -Syy mlocate base-devel bash-completion \
+  # general dev
+  gcc clang automake autoconf ncurses \
+  jdk-openjdk \
   \ # building erlang
-  lksctp-tools
+  lksctp-tools xsltproc
 ```
+
+## Manual installs
+

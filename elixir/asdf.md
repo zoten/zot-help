@@ -25,11 +25,19 @@ I had to do a couple  of horrible things, like
   cd wxWidgets
  git submodule update --init src/png
  git submodule update --init src/jpeg
+ git submodule update --init 3rdparty/catch
+ git submodule update --init 3rdparty/nanosvg
  ./configure --prefix=/usr/local --enable-webview 
  make && sudo make install
  sudo updatedb
  locate wx-config
  # /usr/local/bin/wx-config
+```
+
+in arch/manjaro I had to install
+
+``` bash
+pacman -Syy base-devel pkg-config
 ```
 
 ### Compile flags

@@ -26,3 +26,10 @@ sudo pacman -Syy mlocate base-devel bash-completion \
 
 ## Manual installs
 
+ * [ag](https://github.com/ggreer/the_silver_searcher)
+ * [asdf-vm](https://github.com/asdf-vm/asdf)
+ * autojump
+   * [autojump](https://ryunpu.github.io/use-autojump-in-zsh/) (zsh)
+ * [jless](https://pauljuliusmartinez.github.io/jless/)
+ * 
+ 

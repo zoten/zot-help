@@ -13,6 +13,7 @@ ssh $USER@$HOST "tcpdump -l -U -i any -w - sctp or port 5060 or port 5080 or por
 # Various ways, some work, some don't, still exploring
 wireshark-gtk -k -i <(ssh -p 22 $USER@$HOST "tcpdump -B 4096 -n -K -U -i ens160 -w - not port 22 ")
 wireshark-gtk -k -i <(ssh -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $USER@$HOST "tcpdump -B 4096 -n -K -l -U -i any -w - not port 22")
+#wireshark -k -i <(ssh $USER@$HOST "tcpdump -l -B100000 -U -i any -w - sctp or udp port 8805 or tcp port 8080 or udp port 2152")
 
 ssh -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null $USER@$HOST "tcpdump -B 4096 -n -K -l -U -i any -w - not port 22" | wireshark-gtk -k -i -
 

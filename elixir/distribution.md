@@ -31,6 +31,8 @@ I got to use [epmdpxy](https://github.com:dergraf/epmdpxy) to simulate partition
 
 ### docker container
 
+####  Manual
+
 I usually use docker containers to have a sandbox and be able to touch networking stuff to try and test cluster capabilities in a local environment
 Also, you should install iproute2 in each container
 
@@ -39,3 +41,7 @@ Also, you should install iproute2 in each container
 docker exec app-0 tc qdisc add dev eth0 root netem delay 100ms
 docker exec app-1 tc qdisc add dev eth0 root netem delay 100ms
 ```
+
+#### blockade
+
+Still to test, but nice it exists: [blockade](https://github.com/worstcase/blockade)

@@ -82,3 +82,45 @@ Each row in `pg_stat_activity` represents an established connection to the serve
 If query_start_date is 2 days old, that just means the last query to be executed on that connection was two days ago.
 
 Not really a reason for worry, unless you have so many connections open that it's consuming more RAM than you can afford. It's generally desirable for a connection pool to have a few idle connections so queries don't suffer the latency of establishing a new connection.
+
+## Indexes
+
+### Time Range indexes
+
+Fragment from [supabase's audit tutorial](https://supabase.com/blog/2022/03/08/audit)
+Preconditions
+
+```
+postgres version: >=14
+```
+
+Given we have a table
+
+``` sql
+create table audit.record_version(
+  id             bigserial primary key,
+  -- auditing metadata
+  record_id      uuid, -- identifies a new record by it's table + primary key
+  old_record_id  uuid, -- ^
+  op             varchar(8) not null, -- INSERT/UPDATE/DELETE/TRUNCATE
+  ts             timestamptz not null default now(),
+  -- table identifiers
+  table_oid      oid not null,  -- pg internal id for a table
+  table_schema   name not null, -- audited table's schema name e.g. 'public'
+  table_name     name not null, -- audited table's table name e.g. 'account'
+  -- record data
+  record         jsonb, -- contents of the new record   
+  old_record     jsonb  -- previous record contents (for UPDATE/DELETE)
+);
+```
+
+we can change its index to a time range on `ts` field using
+
+``` sql
+-- index ts for time range filtering
+create index record_version_ts
+  on audit.record_version
+  using brin(ts);
+```
+
+`brin` index is smaller and faster for correlation between value and physical location

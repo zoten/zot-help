@@ -7,6 +7,13 @@ Reminders for changing machines
  - [ ] .ssh folder
  - [ ] root folders
    - [ ] thunderbird folder (mails)
+   - [ ] important settings (in `~/.config`)
+     - [ ] postman settings
+     - [ ] heroku settings
+     - [ ] obsidian settings
+     - [ ] git settings (depending if it is a personal or work notebook but whatever)
+     - [ ] spotify settings (logins etc)
+     - [ ] skype settings (logins etc)
    - [ ] browser folders
      - [ ] Chrome
        - Its files are in `.config/google-chrome`

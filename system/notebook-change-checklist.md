@@ -9,7 +9,9 @@ Reminders for changing machines
    - [ ] thunderbird folder (mails)
    - [ ] browser folders
      - [ ] Chrome
+       - Its files are in `.config/google-chrome`
      - [ ] Firefox
+       - Its files are in `.config/mozilla/firefox`
      - [ ] Brave
  - [ ] `/opt/local/*` stuff
  - [ ] git repositories

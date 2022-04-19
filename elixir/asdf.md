@@ -21,6 +21,12 @@ All my flags
 
 I had to do a couple  of horrible things, like
 
+#### Prerequisites
+
+``` bash
+sudo apt-get install libgtk-3-dev
+```
+
 ``` bash
   cd wxWidgets
  git submodule update --init src/png

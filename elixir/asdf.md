@@ -24,7 +24,17 @@ I had to do a couple  of horrible things, like
 #### Prerequisites
 
 ``` bash
-sudo apt-get install libgtk-3-dev libsctp-dev libsctp1 xsltproc fop libxml2-utils libgl1-mesa-dev libglu1-mesa-dev libegl1-mesa-dev libopengl-dev libwebkit2gtk-4.0-dev libcurl4-openssl-dev
+# some of this stuff is probably not useful
+# packages as of 20.4
+sudo apt-get install libgtk-3-dev libsctp-dev libsctp1 \
+  xsltproc fop libxml2-utils \
+  libgl1-mesa-dev libglu1-mesa-dev libopengl-dev libwebkit2gtk-4.0-dev \
+  libcurl4-openssl-dev \
+  automake autoconf libreadline-dev libncurses-dev \
+  libssl-dev libyaml-dev libffi-dev libtool unixodbc-dev \
+  libssh-dev \
+  libwxgtk3.0-gtk3-dev  \
+  libxml2-utils
 ```
 
 ``` bash

@@ -24,7 +24,7 @@ I had to do a couple  of horrible things, like
 #### Prerequisites
 
 ``` bash
-sudo apt-get install libgtk-3-dev
+sudo apt-get install libgtk-3-dev libsctp-dev libsctp1
 ```
 
 ``` bash

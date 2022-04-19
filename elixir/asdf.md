@@ -24,7 +24,7 @@ I had to do a couple  of horrible things, like
 #### Prerequisites
 
 ``` bash
-sudo apt-get install libgtk-3-dev libsctp-dev libsctp1 xsltproc fop libxml2-utils libglu1-mesa-dev libopengl-dev
+sudo apt-get install libgtk-3-dev libsctp-dev libsctp1 xsltproc fop libxml2-utils libgl1-mesa-dev libglu1-mesa-dev libegl1-mesa-dev libopengl-dev libwebkit2gtk-4.0-dev libcurl4-openssl-dev
 ```
 
 ``` bash

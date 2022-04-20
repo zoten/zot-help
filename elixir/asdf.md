@@ -19,7 +19,18 @@ All my flags
 
 ### Erlang with wx
 
+A nightmare of ever-breaking stuff.
+
 I had to do a couple  of horrible things, like
+
+#### Debug info
+
+Follow [this](https://github.com/erlang/otp/issues/5893) (unresolved as of 20220420) thread if you encounter
+
+``` bash
+gen/wxe_wrapper_5.cpp:2165:29: error: taking the address of a temporary object of type 'wxBitmap' [-Waddress-of-temporary]
+  const wxBitmap * Result = &This->GetBitmap();
+```
 
 #### Prerequisites
 

@@ -25,6 +25,8 @@ I had to do a couple  of horrible things, like
 
 #### Debug info
 
+**Update** this has been solved in erlang 24.3.4 !
+
 Follow [this](https://github.com/erlang/otp/issues/5893) (unresolved as of 20220420) thread if you encounter
 
 ``` bash

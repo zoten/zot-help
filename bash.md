@@ -57,6 +57,25 @@ find /proc/*/fd -lname anon_inode:inotify |
    sort -nr
 ```
 
+### Get current limit
+
+``` bash
+cat /proc/sys/fs/inotify/max_user_watches
+```
+
+
+### Set current limit
+
+``` bash
+# Temporary
+echo 16384 | sudo tee /proc/sys/fs/inotify/max_user_watches
+
+# Permanent
+echo fs.inotify.max_user_watches=16384 | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+
+```
+
 ## SSH tunnel
 
 ``` bash

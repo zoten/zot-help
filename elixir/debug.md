@@ -31,3 +31,37 @@ Thanks umbe
 :dbg.tp {Module, :fun, :_}, :cx # match calls to module.fun
 :dbg.tpl # match non exported functions
 ```
+
+## Quaff
+
+Use Erlang debugger in Elixir
+
+Sources: [Quaff](https://github.com/qhool/quaff) and [tutorial](http://qhool.github.io/elixir/2014/02/06/elixir-debug.html)
+
+TL;DR
+
+Using Quaff shortcuts
+
+``` elixir
+# Start debugger
+Quaff.Debug.start()
+# load all modules in source file
+Quaff.Debug.load("./lib/mymodule.ex")
+# load a module by name
+Quaff.Debug.load(Yet.AnotherModule)
+# debugs the module[s] on all known nodes
+nload(Yet.AnotherModule) # or
+load(Yet.AnotherModule, all_nodes: true)
+```
+
+Using tutorial way
+
+``` elixir
+# Start debugger
+Quaff.Debug.start()
+# Read BEAM file
+{:ok,beam_bin} = File.read("./_build/dev/lib/myapp/ebin/Elixir.MyModule.beam")
+:int.i({MyApp.MyModule,'./lib/mymodule.ex','./_build/dev/lib/myapp/ebin/Elixir.MyModule.beam',beam_bin})
+
+# Now will show in the debugger
+```

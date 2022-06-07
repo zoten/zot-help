@@ -40,6 +40,15 @@ Sources: [Quaff](https://github.com/qhool/quaff) and [tutorial](http://qhool.git
 
 TL;DR
 
+``` elixir
+# mix.exs
+def deps
+# ...
+  {:quaff, github: "qhool/quaff", branch: "master", only: [:dev, :test]},
+# ...
+end
+```
+
 Using Quaff shortcuts
 
 ``` elixir

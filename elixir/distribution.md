@@ -45,3 +45,22 @@ docker exec app-1 tc qdisc add dev eth0 root netem delay 100ms
 #### blockade
 
 Still to test, but nice it exists: [blockade](https://github.com/worstcase/blockade)
+
+## Remote code
+
+### Take existing module and load to remote node
+
+``` elixir
+# filename should be a charlist
+{_module, binary, filename} = :code.get_object_code(Module)
+:rpc.call(node, :code, :load_binary, [Module, filename, binary])
+```
+
+You can also create a module on the fly
+
+``` elixir
+# e.g. https://elixirforum.com/t/loading-runtime-generated-module-into-remote-nodes/34864
+module = Module.concat(MyProject, MyModule)
+contents = Code.string_to_quoted!("def base(), do: IO.puts(\"test\")")
+Module.create(module, contents, Macro.Env.location(__ENV__))
+```

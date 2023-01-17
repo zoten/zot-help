@@ -2,7 +2,9 @@
 
 Info and utilities to work with the beam in less standard ways
 
-## Optimization
+## Optimizations
+
+### Binaries and sub-binaries optimization
 
 From [@jlouis666](https://medium.com/@jlouis666/erlang-string-handling-7588daad8f05)
 
@@ -10,6 +12,17 @@ From [@jlouis666](https://medium.com/@jlouis666/erlang-string-handling-7588daad8
 > `+bin_opt_info`
 > to have the compiler report on which binaries were not optimised in code which is heavily traversed by the program.
 
+### IOData
+
+From [@jlouis666](https://medium.com/@jlouis666/erlang-string-handling-7588daad8f05)
+
+You can form IOData by collecting IOData as lists. This means string concatenation in the language is O(1). Example:
+
+``` erlang
+p(IOData) -> ["<p>", IOData, "</p>"].
+```
+
+will not reallocate any data, nor will it generate any garbage. This means you can avoid having to flatten data, but just send the IOData out over a socket or the like. It avoids costly allocations and copies on the IO pipe in your program.
 
 
 ## Opening ports <1000

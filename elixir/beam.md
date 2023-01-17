@@ -1,6 +1,16 @@
 # Beam
 
-Utilities to work with the beam in non standard ways
+Info and utilities to work with the beam in less standard ways
+
+## Optimization
+
+From [@jlouis666](https://medium.com/@jlouis666/erlang-string-handling-7588daad8f05)
+
+> When programming Erlang, the compiler and VM will automatically generate binaries and sub-binaries for you. Write your code in a straightforward and readable manner first. Then compile your program with
+> `+bin_opt_info`
+> to have the compiler report on which binaries were not optimised in code which is heavily traversed by the program.
+
+
 
 ## Opening ports <1000
 

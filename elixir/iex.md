@@ -34,3 +34,11 @@ IEx.configure(
   |> IO.ANSI.format()|> IO.chardata_to_string()
 )
 ```
+
+## Exit broken command
+
+If you are stuck in a broken expression in iex you can type:
+
+```
+#iex:break
+```

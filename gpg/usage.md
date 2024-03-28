@@ -6,8 +6,24 @@ Generate keys
 # full interactive
 gpg --full-generate-key
 
-# wil not generate a key for encryption
+# will not generate a key for encryption
 gpg --default-new-key-algo rsa4096 --gen-key
+```
+
+Non-interactive
+
+[original gist](https://gist.github.com/woods/8970150?permalink_comment_id=3500397#gistcomment-3500397)
+
+``` bash
+gpg --batch --gen-key <<EOF
+Key-Type: 1
+Key-Length: 2048
+Subkey-Type: 1
+Subkey-Length: 2048
+Name-Real: Root Superuser
+Name-Email: root@handbook.westarete.com
+Expire-Date: 0
+EOF
 ```
 
 ## List Keys

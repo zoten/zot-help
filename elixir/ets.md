@@ -18,7 +18,7 @@ ref = :ets.new(:ets_name, [:named_table, :public, :set])
 ## Lookup
 
 ``` elixir
-:ets.insert(:ets_name, :key)
+:ets.lookup(:ets_name, :key)
 # this will return
 # {:key, {:key, value}}
 # so watch up the double tuple

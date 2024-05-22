@@ -53,3 +53,21 @@ gpg --output staging.public.pgp --armor --export <ID>
 gpg --output staging.private.pgp --armor --export-secret-keys <ID>
 ```
 
+## Sign
+
+``` bash
+# sign with specific user id
+gpg --output doc.sig -u <ID> --sign doc
+
+# verify
+gpg --output doc -u <ID> --verify doc.sig
+
+# verify and extract with specific user id
+gpg --output doc -u <ID> --decrypt doc.sig
+```
+
+## Delete key
+
+``` bash
+gpg --delete-secret-key <ID>
+```

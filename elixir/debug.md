@@ -74,3 +74,23 @@ Quaff.Debug.start()
 
 # Now will show in the debugger
 ```
+
+## Caller tracking
+
+``` elixir
+defmodule MyGenserver do
+  use GenServer
+  
+  def start_link(args) do
+    callers = Process.get(:"$callers") || []
+    new_callers = [self() | callers]
+    GenServer.start_link(__MODULE__, {new_callers, args})
+  end
+
+  @impl GenServer
+  def init({callers, _args}) do
+    Process.put(:"$callers", callers)
+    {:ok, nil}
+  end
+end
+```
